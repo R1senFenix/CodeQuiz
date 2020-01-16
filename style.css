@@ -1,8 +1,43 @@
 body {
-  height: 80vh;
+  min-height: 80vh;
   width: 60vw;
   margin: auto;
 }
 .container {
+  margin: auto;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000000;
+}
+.heading {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(26, 182, 187);
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.activetimer {
+  text-align: right;
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+}
+
+.quizBlock {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(139, 8, 111);
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+}
+
+.startQuizButton {
+  font-size: large;
+  display: block;
   margin: auto;
 }
