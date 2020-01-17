@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var timerStartsAt = 75;
     var index = 0;
+    var nowScore = "";
 
     showThatQuiz.addEventListener('click', function () {
 
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // seee first answer set
         //  
         showQuestion(index);
-        document.querySelectorAll(".currentChoices").addEventListener("click", function () {
+        $(".currentChoices").on("click", function () {
             checkAnswers();
         });
     }
@@ -70,15 +71,17 @@ document.addEventListener("DOMContentLoaded", function () {
     function checkAnswers() {
         //if answer === correctAnswer nextquestion
         var selectedAnswer = document.querySelector(".currentChoices").value;
-        if (selectedAnswer === questions[0].correctAnswer) {
-            document.getElementById(".currentQuestion").remove();
-            document.getElementById(".currentChoices").remove();
+        if (selectedAnswer == questions[index].correctAnswer) {
+            $(".currentQuestion").remove();
+            $(".currentChoices").remove();
+            $("br").remove();
             index++;
             startQuiz(index);
         } else {
             timerStartsAt = timerStartsAt - 15;
-            document.getElementById(".currentQuestion").remove();
-            document.getElementById(".currentChoices").remove();
+            $(".currentQuestion").remove();
+            $(".currentChoices").remove();
+            $("br").remove();
             index++;
             startQuiz(index);
         }
@@ -90,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timerStartsAt--;
             timeWatch.textContent = timerStartsAt;
 
-            if (timerStartsAt === 0) {
+            if (timerStartsAt <= 0) {
                 clearInterval(timerInterval);
                 //insert stop function here
                 return;
