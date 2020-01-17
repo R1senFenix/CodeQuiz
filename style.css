@@ -1,5 +1,5 @@
 body {
-  min-height: 80vh;
+  min-height: 80%;
   width: 60vw;
   margin: auto;
 }
@@ -17,7 +17,7 @@ body {
   padding-right: 2%;
 }
 .activetimer {
-  text-align: right;
+  float: inline-end;
 }
 
 h1 {
@@ -29,7 +29,7 @@ h1 {
   border-width: 2px;
   border-style: solid;
   border-color: rgb(139, 8, 111);
-  width: 75%;
+  min-width: 75%;
   display: block;
   margin-left: auto;
   margin-right: auto;
