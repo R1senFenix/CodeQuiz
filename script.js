@@ -34,17 +34,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showQuestion(index) { //
         // clear existing question set    
+        if (timerStartsAt >= 0 || index > questions.length) {
+            var thisQuestion = questions[index];
+            var addedTitle = thisQuestion.title;
+            console.log(addedTitle);
+            var createQuestionTitles = document.createElement("h3");
+            createQuestionTitles.setAttribute("class", "currentQuestion");
+            createQuestionTitles.innerText = addedTitle;
+            createQuestionTitles.setAttribute
+            getQuestionTitle.appendChild(createQuestionTitles);
+            //console.log("current question is " + currentQuestion);
+            iterateAnswers(thisQuestion);
+        } if (index > questions.length) {
+            nowScore = timerStartsAt;
+            document.write(nowScore + "is your Score!");
 
-        var thisQuestion = questions[index];
-        var addedTitle = thisQuestion.title;
-        console.log(addedTitle);
-        var createQuestionTitles = document.createElement("h3");
-        createQuestionTitles.setAttribute("class", "currentQuestion");
-        createQuestionTitles.innerText = addedTitle;
-        createQuestionTitles.setAttribute
-        getQuestionTitle.appendChild(createQuestionTitles);
-        //console.log("current question is " + currentQuestion);
-        iterateAnswers(thisQuestion);
+        } else {
+            return alert("out of time");
+        }
     }
 
     function iterateAnswers(thisQuestion) {
